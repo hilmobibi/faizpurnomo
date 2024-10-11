@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      faizpurnomo.com
+    </title>
+  </head>
+
+  <body>
+
+   <div>
+
+    <p>faizpurnomo tools pengukur berat badan </p>
+    <input type="text" placeholder="input bodyweight" class="js-inputtext" id="input">
+    <p id="output"></p>
+
+   </div>
+    
+  </body>
+
+  <script>
+  let hasiHitung = '';
+
+   /* let beratBadan = document.querySelector('.js-inputtext').value 
+      if( beratBadan >= 100){console.log('sitas lu tolol')} 
+      else if (beratBadan <100 && beratBadan > 80) {console.log('yuk bisa yuk')}
+      else{console.log('bagus-bagus')}*/
+
+
+    document.getElementById("input").addEventListener("keypress", function(event) {
+    // Check if the key pressed is "Enter" (key code 13)
+    if (event.key === "Enter") {
+        // Prevent the default behavior (form submission, etc.)
+        event.preventDefault();
+
+        // Call the function to handle the input value
+        getInputValue();
+    }
+});
+
+// Function to get the input value and display it in a paragraph
+function getInputValue() {
+    const inputValue = document.getElementById("input").value;
+
+    //calculate
+    if( inputValue >= 100){hasiHitung = 'sitas lu tolol'} 
+      else if (inputValue <100 && inputValue >= 80) {hasiHitung = 'yuk bisa yuk'}
+      else if (inputValue < 80 && inputValue >= 50){hasiHitung = 'bagus-bagus'}
+      else if (inputValue < 50 && inputValue > 0){hasiHitung = 'makan tolol'}
+      else {hasiHitung = 'please insert the proper value'}
+      
+      
+
+    // Display the value in the "output" paragraph
+    document.getElementById("output").textContent = hasiHitung ;
+}
+
+  </script>
+</html>
